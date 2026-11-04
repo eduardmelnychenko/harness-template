@@ -36,6 +36,10 @@ invent current systems or interactions to complete this section.
 
 {{current_situation_or_unknown}}
 
+State the evidence or source for material facts. If the architecture is entirely
+proposed, say so and avoid presenting proposed components or integrations as
+part of the existing system.
+
 ## Solution overview and scope
 
 - **Proposed or existing approach:** {{summary_and_rationale}}
@@ -53,6 +57,10 @@ Link to diagram sources when they help the intended audience. Use the project's
 established format and the narrowest useful level of detail. If using C4,
 identify the level and scope; show clear system boundaries, named elements, and
 directional, labeled relationships. Keep external actors outside the boundary.
+Show the system boundary and distinguish people, external systems, and internal
+elements. Label important flows with their purpose or data; include a legend
+when notation needs explanation. Do not add detail that the audience cannot
+validate or use.
 Render and inspect diagrams when tooling allows, and record any limitations;
 do not claim a visual check was performed unless it was.
 
@@ -74,7 +82,9 @@ relationships to the system. Mark unconfirmed integrations as provisional.
 Describe the major parts within the boundary, their responsibilities, and their
 dependencies. For a C4 container view, a container is an independently running
 application or data store, not necessarily a particular deployment technology.
-Add component-level detail only when it is useful for the task.
+Distinguish deployable/runtime containers from internal components, libraries,
+and third-party services. Record selected technologies only when they are
+known, and add component-level detail only when it is useful for the task.
 
 | Element | Responsibility | Dependencies or interfaces | Technology or format | Status |
 | --- | --- | --- | --- | --- |
@@ -83,8 +93,10 @@ Add component-level detail only when it is useful for the task.
 ## Main flows and interfaces
 
 Describe the main workflows in order, including triggers, inputs, outputs,
-decisions, and relevant failure or recovery paths. Use confirmed names and
-contracts; mark unknown interfaces and ownership explicitly.
+decisions, and relevant failure or recovery paths. Name the responsible
+elements, direction of data flow, and trust or approval boundaries. Use
+confirmed interface names and contracts; mark unknown interfaces, ownership,
+and recovery behavior explicitly.
 
 1. {{trigger_and_first_step}}
 2. {{subsequent_steps_and_outcome}}
@@ -100,11 +112,27 @@ Document applicable data ownership, access, storage, lifecycle, retention, and
 deletion requirements. Describe deployment environments and operational
 ownership, including monitoring, support, backup, recovery, and rollback where
 relevant. Identify dependencies and distinguish planned, implemented but
-unverified, and validated controls.
+unverified, and validated controls. Preserve source data and provenance where
+required; state how derived data, logs, and audit records relate to their
+inputs and versions.
 
 | Area | Design or operational approach | Owner or dependency | Source and status |
 | --- | --- | --- | --- |
 | {{data_deployment_or_operations_area}} | {{approach_or_unknown}} | {{owner_or_dependency_or_unknown}} | {{source_and_confirmation}} |
+
+## Automation and agent boundaries
+
+Complete this section when the system uses an AI agent or other autonomous
+automation; otherwise remove it. Describe the automation's bounded role, the
+data and tools it can access, and which actions require human approval.
+Distinguish recommendations from actions and identify the component that
+independently enforces permissions and policy. Document execution limits,
+failure handling, escalation, and traceability. Do not assume that confidence
+scores, prompts, or recorded decisions alone make an action safe or repeatable.
+
+| Action or capability | Allowed scope and controls | Approval or escalation | Evidence and versioning | Status |
+| --- | --- | --- | --- | --- |
+| {{action_or_capability}} | {{permissions_limits_and_policy}} | {{human_or_policy_gate}} | {{inputs_tools_models_and_records}} | {{source_and_confirmation}} |
 
 ## Cross-cutting requirements
 
@@ -144,4 +172,3 @@ only for checks actually performed.
 Identify the next validation milestone, participants, success criteria, and
 decision point: {{validation_plan_or_unknown}}. Document unresolved gaps and
 do not claim readiness or compliance without supporting evidence.
-

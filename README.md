@@ -17,6 +17,14 @@ These are starting points, not filled-in project specifications. You can use
 them independently; the agent-instructions template is designed to link to
 `PRODUCT.md` and `ARCHITECTURE.md` when those documents are used.
 
+## Examples
+
+The `examples/` folder shows the templates applied to two different scenarios.
+Use the examples to see how to record concrete workflows, trace requirements
+to acceptance criteria and design, distinguish current facts from proposed
+architecture, and define boundaries for agent-driven actions. Example-specific
+details are illustrative, not defaults or requirements for other projects.
+
 ## Getting started
 
 From this repository's root, copy the templates you want into the target
@@ -48,5 +56,6 @@ verified without evidence.
 
 ## Repository contents
 
-This repository contains only the three templates and this README; it does not
-include a runnable application or setup, build, or test commands.
+This repository contains Markdown templates, example project documents, and
+this README. It does not include a runnable application or setup, build, or
+test commands.

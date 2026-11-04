@@ -20,20 +20,24 @@
 
 Before starting work:
 
-1. Read this file, the product requirements, and applicable architecture and
-   task-specific instructions. Read the feature tracker and work history if
-   they are used and relevant to the task. Treat history as context, not as a
-   substitute for the current source files.
-2. Identify the requested outcome, affected files, relevant acceptance
-   criteria, and existing conventions. Check the working tree when applicable;
-   preserve unrelated user changes.
-3. If required information is missing, empty, invalid, or contradictory, do
+1. Read this file and the task. Read applicable product requirements,
+   architecture, and task-specific instructions before changing their
+   respective areas.
+2. Inspect the relevant source, tests, configuration, and documentation. Follow
+   references as needed; do not read the entire repository by default. Check the
+   working tree when applicable and preserve unrelated user changes.
+3. Identify the requested outcome, affected files, acceptance criteria, and
+   existing conventions. Read a feature tracker or work history when the
+   project uses one and it is relevant. Treat history as context, not as a
+   substitute for current requirements or source files.
+4. If required information is missing, empty, invalid, or contradictory, do
    not invent it. Report the gap and continue only if it does not prevent safe,
    correct work. Ask for clarification when the gap blocks progress.
-4. If a feature tracker is in use, preserve malformed data unchanged. Initialize
-   a missing or empty tracker only when project instructions require it and the
-   documented requirements, applicable architecture, and established schema
-   are sufficient to do so without guessing. Otherwise report the gap.
+5. If a feature tracker is in use, preserve malformed data unchanged.
+   Initialize a missing or empty tracker only when project instructions require
+   it and the documented requirements, applicable architecture, and
+   established schema are sufficient to do so without guessing. Otherwise,
+   report the gap.
 
 ## Boundaries and execution
 
@@ -45,7 +49,8 @@ Before starting work:
   Reuse existing code and checks when appropriate.
 - Do not expose credentials, secrets, or private data in files, logs, examples,
   or responses. Do not perform destructive or external actions without explicit
-  authorization.
+  authorization. Confirm the scope and impact of operations that can delete,
+  overwrite, publish, or send project data.
 - Investigate before asking questions. Ask when requirements conflict or an
   unresolved decision could materially change the result; otherwise state
   necessary assumptions and distinguish them from confirmed facts.
@@ -60,11 +65,13 @@ Before starting work:
 - **Document, diagram, or other artifact checks:** {{checks_or_not_applicable}}
 - **Project-specific skills, formats, and conventions:** {{details_or_not_applicable}}
 
-Run checks appropriate to the changed work and its acceptance criteria. For
-visual artifacts, check both the file structure and the rendered result when
-applicable. Investigate failures caused by the change; report unrelated
-baseline failures, checks not run, and the reasons. Do not claim a check passed
-unless it was actually run.
+Find the project's documented commands and existing checks; do not invent
+commands or claim a tool is available without evidence. Run checks appropriate
+to the changed work and its acceptance criteria. For diagrams and other visual
+artifacts, check both the source structure and rendered result when applicable.
+Investigate failures caused by the change; report unrelated baseline failures,
+checks not run, and the reasons. Do not claim a check passed unless it was
+actually run.
 
 ## Feature tracking
 
@@ -97,10 +104,10 @@ secrets or private data.
 ## Definition of done
 
 - The requested work meets applicable confirmed requirements and acceptance
-  criteria, and changed artifacts meet their format and language requirements.
+  criteria; changed artifacts meet their format and language requirements.
 - Relevant checks have been run and task-related failures resolved, or any
   remaining limitations are clearly reported.
-- Documentation reflects changed behavior. Applicable feature status and
-  evidence, and work history, are updated according to project conventions.
-- The final response summarizes the changes, validation, and any remaining
-  limitations or blockers; suggest a next step when useful.
+- Documentation reflects changed behavior. Feature status and work history are
+  updated when the project uses them and its conventions call for an update.
+- The final response states what changed, actual validation results, and any
+  remaining limitations or blockers.
