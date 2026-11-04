@@ -1,146 +1,138 @@
 # Product Requirements
 
-> Template: copy this file to `PRODUCT.md` in the target project. Replace each
-> `{{placeholder}}` with known information or `unknown`, and remove sections
-> that do not apply. Adapt existing requirements instead of replacing them
-> without approval. Use stable IDs to link requirements to acceptance criteria.
-> Record the source and confirmation status of material statements; do not
-> present assumptions, targets, or proposed capabilities as verified facts.
+> Copy this file to the project's agreed requirements path (commonly
+> `PRODUCT.md`). Replace each `{{placeholder}}` with confirmed information,
+> `unknown`, or `not applicable`; remove sections that do not fit. Keep
+> assumptions and proposals distinct from agreed requirements. Use stable IDs
+> so requirements, acceptance criteria, and architecture can refer to each
+> other.
 
-## Document context
+## Document control
 
 - **Product or initiative:** {{name}}
-- **Owner and stakeholders:** {{names_or_roles}}
-- **Status and last reviewed:** {{draft_proposed_or_agreed; date}}
-- **Sources:** {{customer_input_research_existing_documents_or_unknown}}
-- **Related architecture or design:** {{path_or_not_yet_available}}
+- **Document owner:** {{role_or_name}}
+- **Contributors and decision-makers:** {{roles_or_unknown}}
+- **Status:** {{draft_proposed_agreed_or_other}}
+- **Last reviewed:** {{date_or_unknown}}
+- **Sources:** {{interviews_research_existing_documents_or_unknown}}
+- **Related documents:** {{paths_or_unknown}}
 
-## Purpose and problem
+## Summary
 
-- **Customer or organization:** {{who_has_the_need}}
-- **Problem and why it matters:** {{observed_problem_and_impact}}
-- **Current workflow:** {{how_work_is_done_today_including_workarounds}}
-- **Evidence and baseline:** {{observations_sources_and_known_limits}}
-- **Desired outcome:** {{what_should_improve_and_for_whom}}
+- **For whom:** {{primary_customer_or_user}}
+- **Need or problem:** {{observed_problem_and_impact}}
+- **Proposed outcome:** {{change_expected_for_users}}
+- **Evidence:** {{source_and_limits_of_evidence}}
 
-Separate the observed problem from its suspected cause. Mark information that
-still needs customer confirmation.
+Separate observed facts from suspected causes and desired outcomes. Mark
+unconfirmed statements and do not present a proposed solution as an agreed
+product decision.
 
 ## Users and stakeholders
 
-| User or stakeholder | Goals and responsibilities | Current pain points or needs | Source and status |
+| User or stakeholder | Goals and responsibilities | Needs, constraints, or pain points | Source and status |
 | --- | --- | --- | --- |
-| {{role}} | {{goals}} | {{needs}} | {{source_and_confirmation}} |
+| {{role}} | {{goals_and_responsibilities}} | {{needs_or_unknown}} | {{source_and_confirmation}} |
 
-Include decision-makers, operators, people affected by the product, and
-dependent teams when relevant. Record responsibilities and handoffs; do not
-assume one role represents every user's needs.
+Include affected users, decision-makers, operators, support teams, and
+dependent organizations where relevant. Identify who owns important handoffs
+and decisions.
 
-## Outcomes and success measures
+## Outcomes and measures
 
-| Outcome | Baseline | Target | Measurement, population, and time frame | Owner | Source and status |
+| ID | Outcome | Baseline | Target | Measure, population, and period | Owner and source |
 | --- | --- | --- | --- | --- | --- |
-| {{outcome}} | {{baseline_or_unknown}} | {{target_or_unknown}} | {{how_and_when_to_measure}} | {{owner}} | {{source_and_confirmation}} |
+| OUT-1 | {{user_or_business_outcome}} | {{value_or_unknown}} | {{target_or_unknown}} | {{unit_method_population_period}} | {{owner_source_status}} |
 
-Targets are desired results, not proof of performance. Record measured results
-and their evidence separately when available.
+Targets are desired results, not measured performance. Define the unit,
+population, workload, conditions, and time period. Record measured results and
+their evidence separately.
 
-Define the unit being measured, relevant population, starting baseline, and
-measurement period. Mark unknown baselines and targets instead of implying
-that a number has been measured or approved.
+## Scope and delivery
 
-## Scope
-
-- **In scope:** {{workflows_capabilities_and_deliverables}}
+- **In scope:** {{capabilities_workflows_and_deliverables}}
 - **Out of scope:** {{explicit_exclusions}}
-- **Initial release or phase:** {{smallest_useful_scope_or_unknown}}
-- **Product and organizational boundaries:** {{responsibilities_and_handoffs}}
+- **Initial release or phase:** {{smallest_useful_delivery_or_unknown}}
+- **Product boundary:** {{responsibilities_and_external_handoffs}}
+- **Dependencies:** {{teams_systems_data_or_unknown}}
 
-## Workflows, data, and integrations
-
-Describe the intended workflow, including who acts, what starts and ends the
-workflow, important decisions, and exceptions. Avoid assuming systems or
-interfaces that have not been confirmed.
-
-| Input, output, or integration | Source or recipient | Purpose and format | Constraints or dependencies | Source and status |
+| Milestone | Deliverable | Audience and format | Owner | Exit condition and status |
 | --- | --- | --- | --- | --- |
-| {{item}} | {{source_or_recipient}} | {{purpose_and_format_or_unknown}} | {{constraints_or_unknown}} | {{source_and_confirmation}} |
+| {{phase_or_date}} | {{artifact_or_capability}} | {{audience_and_format}} | {{owner}} | {{observable_exit_condition}} |
 
-Identify important handoffs, failure cases, and who owns the next action. For
-data, record the authoritative source, expected format, sensitivity, and
-retention or deletion needs when known.
+## Users, workflows, and information
+
+Describe the main user journeys from trigger to outcome. Include decisions,
+exceptions, recovery, and who acts at each handoff. Keep the current workflow
+separate from the desired workflow.
+
+| Flow ID | Actor and trigger | Main steps and decisions | Outcome and exception paths | Source and status |
+| --- | --- | --- | --- | --- |
+| FLOW-1 | {{actor_and_trigger}} | {{steps_and_decisions}} | {{outcome_failures_and_recovery}} | {{source_and_confirmation}} |
+
+| Information or integration | Source and recipient | Purpose, format, and authority | Sensitivity, retention, or constraint | Source and status |
+| --- | --- | --- | --- | --- |
+| {{data_or_interface}} | {{producer_and_consumer}} | {{purpose_format_authority}} | {{constraints_or_unknown}} | {{source_and_confirmation}} |
+
+Identify authoritative sources, ownership, relevant data quality, privacy,
+retention, deletion, and interface dependencies when known. Do not assume an
+integration or data contract that has not been confirmed.
 
 ## Functional requirements
 
-State observable behavior and who needs it; avoid prescribing an implementation
-unless it is a confirmed constraint. Use one stable ID per requirement and
-write each requirement so it can be verified. Keep each row atomic; separate
-independent behaviors. Use a consistent priority scheme, for example
-`must`, `should`, and `could`, and define it below if adopted.
+Write observable outcomes, not implementation instructions, unless a
+technology or design is a confirmed constraint. Use one stable ID per
+requirement. Keep independent behaviors separate. Define a priority scheme and
+apply it consistently.
 
-| ID | User or actor | Requirement | Priority | Source and status | Acceptance criteria IDs |
+| ID | Actor | Requirement | Priority | Source and status | Acceptance IDs |
 | --- | --- | --- | --- | --- | --- |
-| {{FR-1}} | {{role}} | {{observable_behavior}} | {{priority}} | {{source_and_confirmation}} | {{AC-1}} |
+| FR-1 | {{user_or_system}} | {{single_observable_behavior}} | {{must_should_could_or_defined_scale}} | {{source_and_confirmation}} | {{AC-1}} |
 
-### Priority definitions
+**Priority definitions:** {{define_priority_values_and_release_implications}}
 
-- **{{priority_value}}:** {{meaning_and_release_implication}}
+## Quality requirements and constraints
 
-## Non-functional requirements
+Include applicable security, privacy, safety, accessibility, performance,
+reliability, availability, scalability, usability, maintainability,
+interoperability, operations, and compliance needs. Do not assume a standard
+or regulation applies without a source. Separate mandatory constraints from
+targets and define how each target will be measured.
 
-For each applicable quality requirement, specify a measurable target and the
-conditions under which it is measured. Consider security, privacy,
-accessibility, performance, reliability, usability, maintainability,
-interoperability, operations, and compliance where relevant; do not assume any
-particular standard or obligation applies. Separate mandatory constraints from
-desired targets, and define the workload, environment, and measurement method
-needed to evaluate each target.
-
-| ID | Quality attribute | Requirement and target | Measurement conditions | Source and status | Acceptance criteria IDs |
+| ID | Attribute or constraint | Requirement or target | Measurement conditions | Source and status | Acceptance IDs |
 | --- | --- | --- | --- | --- | --- |
-| {{NFR-1}} | {{attribute}} | {{measurable_requirement_or_unknown}} | {{workload_environment_or_unknown}} | {{source_and_confirmation}} | {{AC-2}} |
+| NFR-1 | {{quality_attribute}} | {{measurable_target_or_required_control}} | {{workload_environment_method_and_threshold}} | {{source_and_confirmation}} | {{AC-2}} |
 
-## Constraints and dependencies
-
-| ID | Constraint or dependency | Source or owner | Impact on scope or delivery | Status |
+| ID | Dependency or external constraint | Owner or source | Impact and required decision | Status |
 | --- | --- | --- | --- | --- |
-| {{C-1}} | {{environment_data_security_legal_budget_timeline_or_other}} | {{source_or_owner}} | {{impact}} | {{confirmed_or_unconfirmed}} |
-
-## Deliverables
-
-| Deliverable | Audience and format | Scope or related requirement IDs | Owner | Status |
-| --- | --- | --- | --- | --- |
-| {{deliverable}} | {{audience_and_format}} | {{scope_or_ids}} | {{owner}} | {{status}} |
+| C-1 | {{constraint_or_dependency}} | {{owner_or_source}} | {{impact_and_needed_action}} | {{confirmed_or_open}} |
 
 ## Acceptance criteria
 
-Define testable conditions for both deliverables and product behavior. For each
-criterion, identify the verification method and who accepts the result. Link
-each criterion to the requirement or deliverable it verifies. Use observable
-conditions (for example, Given/When/Then) where they improve clarity. Record
-planned checks separately from results; do not mark a criterion as met without
-evidence.
+Define conditions that can be observed and verified. Link each criterion to
+requirements or deliverables. State test data, environment, workload, and
+acceptance owner where needed. Separate the planned verification method from
+the result; mark criteria met only when evidence exists.
 
-| ID | Requirement or deliverable | Observable criterion | Verification method and evidence | Acceptance owner | Status |
+| ID | Requirement or deliverable | Observable pass condition | Verification method and conditions | Evidence and status | Acceptance owner |
 | --- | --- | --- | --- | --- | --- |
-| {{AC-1}} | {{FR-1}} | {{given_conditions_when_action_then_expected_result}} | {{test_or_review_and_conditions}} | {{owner}} | {{planned_not-verified_or_evidence}} |
-| {{AC-2}} | {{NFR-1}} | {{measurable_target_under_defined_conditions}} | {{measurement_method_workload_and_environment}} | {{owner}} | {{planned_not-verified_or_evidence}} |
+| AC-1 | FR-1 | {{given_when_then_or_equivalent_condition}} | {{test_review_measurement_and_conditions}} | {{not_verified_or_evidence}} | {{role}} |
 
 ## Assumptions, risks, and open questions
 
-| Type | Statement and impact | Evidence or source | Validation or decision needed | Owner | Status |
+| ID | Type | Statement and impact | Evidence or source | Decision or validation needed | Owner and status |
 | --- | --- | --- | --- | --- | --- |
-| {{assumption_risk_or_question}} | {{statement_and_impact}} | {{evidence_or_unknown}} | {{next_step}} | {{owner_or_unknown}} | {{status}} |
+| Q-1 | {{assumption_risk_or_question}} | {{statement_and_impact}} | {{evidence_or_unknown}} | {{next_step_or_decision}} | {{owner_and_status}} |
 
-Keep assumptions and proposals distinct from confirmed requirements. Prioritize
-open questions that block scope, acceptance, safety, or delivery.
+Prioritize questions that block scope, acceptance, safety, privacy, or delivery.
+Do not silently convert assumptions into confirmed requirements.
 
-## Validation and delivery plan
+## Validation and release plan
 
-| Milestone or experiment | What it will validate | Participants | Success criteria and next decision | Timing | Status |
-| --- | --- | --- | --- | --- | --- |
-| {{milestone}} | {{hypothesis_or_scope}} | {{participants}} | {{criteria_and_decision}} | {{date_or_unknown}} | {{status}} |
+| Milestone or experiment | Hypothesis or requirement | Participants and environment | Success condition and decision | Timing and status |
+| --- | --- | --- | --- | --- |
+| {{milestone}} | {{what_will_be_validated}} | {{who_where_and_with_what_data}} | {{threshold_and_next_decision}} | {{date_and_status}} |
 
-Distinguish discovery, prototype, and production work when applicable. Update
-requirements and related design documents when decisions are confirmed; record
-remaining limitations and do not claim compliance or readiness without evidence.
+Distinguish discovery, prototype, pilot, and production when relevant. Record
+remaining limitations and do not claim readiness, compliance, or performance
+without supporting evidence.
